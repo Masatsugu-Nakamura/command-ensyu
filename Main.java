@@ -3,23 +3,45 @@ import java.util.Scanner;
 public class Main{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        System.out.println("身長(cm)を入力してください。");
-        double height = sc.nextDouble();
-        System.out.println("体重(kg)を入力してください。");
-        double weight = sc.nextDouble();
+        System.out.println("1人目(ユーザーA)の身長(cm)を入力してください。");
+        double heightA = sc.nextDouble();
+        System.out.println("1人目(ユーザーA)の体重(kg)を入力してください。");
+        double weightA = sc.nextDouble();
 
-        double height2 = ((height / 100.00) * (height / 100.00));
-        double bmi = weight / height2;
-        System.out.println("あなたのBMIは" + String.format("%.2f",bmi) + "です。");
+        System.out.println("2人目(ユーザーB)身長(cm)を入力してください。");
+        double heightB = sc.nextDouble();
+        System.out.println("2人目(ユーザーB)体重(kg)を入力してください。");
+        double weightB = sc.nextDouble();
 
-        if(bmi < 18.50){
-            System.out.println("あなたは瘦せ型です。");
-        } else if(bmi < 25.00){
-            System.out.println("あなたは普通体重です。");
+        double height1 = ((heightA / 100.00) * (heightA / 100.00));
+        double height2 = ((heightB / 100.00) * (heightB / 100.00));
+        double bmiA = weightA / height1;
+        double bmiB = weightB / height2;
+
+        System.out.println("ユーザーAのBMIは" + String.format("%.2f",bmiA) + "です。");
+
+
+        if(bmiA < 18.50){
+            System.out.println("ユーザーAは瘦せ型です。");
+        } else if(bmiA < 25.00){
+            System.out.println("ユーザーAは普通体重です。");
         } else {
-            System.out.println("あなたは肥満です。気をつけてください。");
+            System.out.println("ユーザーAは肥満です。気をつけてください。");
         }
 
-        System.out.println("あなたの身長の適正体重は" + String.format("%.2f",height2 * 22) + "kgです。");
+        System.out.println("ユーザーAの身長の適正体重は" + String.format("%.2f",height1 * 22) + "kgです。");
+
+
+        System.out.println("ユーザーBのBMIは" + String.format("%.2f",bmiB) + "です。");
+        
+        if(bmiB < 18.50){
+            System.out.println("ユーザーBは瘦せ型です。");
+        } else if(bmiB < 25.00){
+            System.out.println("ユーザーBは普通体重です。");
+        } else {
+            System.out.println("ユーザーBは肥満です。気をつけてください。");
+        }
+
+        System.out.println("ユーザーBの身長の適正体重は" + String.format("%.2f",height2 * 22) + "kgです。");
     }
 }
